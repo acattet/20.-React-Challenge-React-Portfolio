@@ -6,7 +6,7 @@ function Header(props) {
         sectionSelected,
         setSectionSelected
     } = props;
-    
+    //set the navigation to be more sidebar style. liked the way of it a little better
     return (
         <header>
             <img src={require(`../../assets/images/me.jpg`)} width="60" alt="my profile" />

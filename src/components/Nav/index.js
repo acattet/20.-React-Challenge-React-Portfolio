@@ -1,5 +1,5 @@
 import React from "react";
-
+//basic setup
 function Navigation(props) {
     const {
         setSectionSelected

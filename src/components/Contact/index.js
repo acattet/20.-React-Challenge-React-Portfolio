@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+//validate the email to see if it has the @ and .com
 
 function validateEmail(email) {
   var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -10,6 +11,8 @@ function ContactForm() {
     const [formState, setFormState] = useState({ name: "", email: "", message: "" });
     const { name, email, message } = formState;
     const [errorMessage, setErrorMessage] = useState("");
+    
+ //error messages
 
     function handleChange(e) {
         if(e.target.name === "email") {

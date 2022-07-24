@@ -45,7 +45,7 @@ function Project() {
             imageType: "light",
         },
     ]);
-
+//Could not figure out how to add different buttons and im out of time to keep trying
     return (
         <>
             {projects.map((image, i) => (

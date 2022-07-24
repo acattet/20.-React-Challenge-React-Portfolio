@@ -1,5 +1,5 @@
 import React from 'react';
-
+//pretty much copied my BIO from the first portfolio. nothing has changed since lol
 function About() {
   return (
     <>
