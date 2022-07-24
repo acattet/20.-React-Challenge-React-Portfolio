@@ -1,13 +1,385 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*could not figure out how to keep selected nav highlighted*/
+
+:root {
+  --primary-color: #21D19F;
+  --secondary-color: #45B69C;
+  --tertiary-color: #637f8a;
+  --text-color: #000000;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--primary-color);
+  color: var(--text-color);
+  font-family: helvetica, arial, sans-serif;
+}
+
+a {
+  color: var(--tertiary-color);
+}
+
+a:hover {
+  color: #201e19;
+}
+
+a:active {
+  color: #00ff2a;
+}
+
+a:visited {
+  color: #90c5f7;
+}
+
+header, footer {
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+  font-family: 'Arial', Courier, monospace;
+  padding: 12px 10px 10px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  box-shadow: 0 0 15px 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  border-bottom: 2px ridge var(--tertiary-color);
+  justify-content: space-between;
+}
+
+ header img {
+   float: left;
+   border-radius: 50px;
+   margin-left: 140px;
+ }
+
+header h1, section h2, footer h2 {
+  font-weight: normal;
+}
+
+header h1, section h2 {
+  font-size: 50px;
+}
+
+header h1 sup, header h1 sub {
+  font-size: 25px;
+}
+
+header a, footer a {
+  font-size: 20px;
+ 
+}
+
+footer {
+  border-top: 2px ridge var(--tertiary-color);
+  justify-content: space-around;
+  
+}
+footer a:hover {
+  color: #f1f1f1;
+}
+
+header li, footer li {
+  float: left;
+}
+
+header li:first-child, footer li:first-child {
+  list-style-type: none;
+}
+
+header li:not(li:first-child), footer li:not(li:first-child) {
+  margin-left: 20px;
+}
+
+img {
+   border-radius: 15px;
+   box-shadow: 0 0 10px 0;
+   margin: 5px;
+ }
+
+nav {
+  height: 100%; 
+  width: 130px; 
+  position: fixed; 
+  z-index: 1; 
+  top: 0; 
+  left: 0;
+  background-color: #000000;
+  overflow-x: hidden; 
+  padding-top: 20px;
+  border-color: #e9c7c7;
+  border-left: 0px;
+  border-top: 0px;
+  border-style: solid;
+}
+
+nav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+nav a:hover {
+  color: #f1f1f1;
+  
+}
+
+main {
+  background-color: var(--primary-color);
+  min-height: calc(100vh - 140px);
+  margin-left: 140px; 
+  padding: 0px 10px;
+}
+
+
+section h2 {
+  color: var(--tertiary-color);
+  font-family: 'Arial', Courier, monospace;
+  margin: 5px;
+  padding: 5px 10px 10px 0;
+  border-bottom: solid 3px;
+  box-shadow: #eeaaaa;
+}
+
+.infobox {
+  background: var(--secondary-color);
+  margin: 10px;
+  padding: 2px;
+  float: left;
+  clear: left;
+  flex-direction: column;
+  align-items: center;
+  color: var(--tertiary-color);
+}
+
+
+
+#contact-box button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#contact-box button:hover {
+  background-color: #45a049;
+}
+
+#contact-box {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  
+}
+
+#contact-form {
+width: 100%
+}
+
+
+.content h3 {
+  color: var(--tertiary-color);
+  font-size: 24px;
+  font-weight: normal;
+  border-bottom: 1px solid var(--tertiary-color);
+  margin: 6px 0 10px 0;
+}
+
+.content p {
+  line-height: 1.2;
+  margin-bottom: 15px;
+  
+}
+
+
+.project-section {
+  padding-left: 0;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.project-section article {
+  margin: 5px 5px -31px 5px;
+}
+
+.project-section article a {
+  text-decoration: none;
+}
+
+.project-section .light a {
+  color: var(--primary-color);
+}
+
+.project-section .dark a {
+  color: var(--text-color);
+}
+
+.project-section article img {
+  max-width: 400px;
+  min-width: 200px;
+  border: 2px solid var(--tertiary-color);
+  border-radius: 2px;
+}
+
+.project-section article div {
+  position: relative;
+  left: 6px;
+  bottom: 36px;
+  height: 27.2px;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 0 0 1px;
+  width: fit-content;
+  max-width: 448px;
+}
+
+.project-section article div.multiline {
+  bottom: 50px;
+  line-height: 0.8;
+}
+
+.project-section article div small {
+  font-size: 12px;
+}
+
+.proficiencies h3 {
+  font-size: 25px;
+}
+
+.proficiencies li {
+  font-size: 20px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  min-width: 360px;
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+form button {
+  background: transparent;
+  border: 2px ridge var(--tertiary-color);
+  border-radius: 4px;
+  color: var(--tertiary-color);
+  font-size: inherit;
+  margin-bottom: 10px;
+  padding: 2px 4px;
+}
+
+.error-text {
+  color: #eeaaaa;
+  font-style: italic;
+}
+
+@media only screen and (max-width: 1039.9px) {
+  .infobox {
+    float: none;
+    clear: none;
+    margin: 10px auto;
+  }
+}
+
+@media only screen and (max-width: 799.9px) {
+  footer {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 767.9px) {
+  section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section h2 {
+    padding: 5px 0;
+    margin: 0 auto;
+    border-right: none;
+    border-bottom: 2px solid var(--tertiary-color);
+  }
+
+  form div:first-child {
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 599.9px) {
+  header {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 519.9px) {
+  header ul, footer ul {
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  header li:first-child, footer li:first-child {
+    list-style-type: disc;
+  }
+
+  header li:not(li:first-child), footer li:not(li:first-child) {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 499.9px) {
+  .project-section article div {
+    max-width: calc(100% - 10px);
+  }
+}
+
+@media only screen and (max-width: 405.9px) {
+  form div {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 323.9px) {
+  .infobox {
+    width: fit-content;
+    padding-top: 0;
+  }
+
+  .infobox tr {
+    display: flex;
+    flex-direction: column;
+  }
+
+  section {
+    margin: 10px 10px 10px 0;
+  }
+
+  section h2 {
+    font-size: 48px;
+  }
+
+  .project-section article {
+    margin-bottom: -32px;
+  }
+
+  .project-section article div {
+    font-size: 20px;
+    bottom: 32px;
+    height: 23.2px;
+  }
 }
